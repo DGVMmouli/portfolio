@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* ================= BODY ================= */
+
+body{
+    background:#0f0f0f;
+    color:#e6e6e6;
+    position:relative;
+    overflow-x:hidden;
+}
+
+/* Embroidery Pattern Overlay */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:url("https://www.svgbackgrounds.com/wp-content/uploads/2021/05/paisley-pattern.svg");
+    background-size:600px;
+    background-repeat:repeat;
+    opacity:0.05;
+    filter:grayscale(100%) contrast(120%);
+    z-index:-1;
+}
+
+
+
+/* ================= HEADER ================= */
+
+header{
+    position:fixed;
+    width:100%;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    backdrop-filter:blur(15px);
+    background:rgba(20,20,20,0.7);
+    border-bottom:1px solid rgba(255,255,255,0.05);
+    z-index:1000;
+}
+
+.logo{
+    font-weight:800;
+    font-size:22px;
+    background:linear-gradient(90deg,#ffffff,#9e9e9e);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* ================= NAVBAR ================= */
+
+nav a{
+    margin-left:25px;
+    text-decoration:none;
+    color:#bfbfbf;
+    position:relative;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#ffffff;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:2px;
+    bottom:-5px;
+    left:0;
+    background:#9e9e9e;
+    transition:0.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* ================= SECTIONS ================= */
+
+.section{
+    padding:120px 8%;
+    min-height:100vh;
+}
+
+/* ================= HERO ================= */
+
+.home h1{
+    font-size:50px;
+    font-weight:800;
+    background:linear-gradient(90deg,#ffffff,#8f8f8f);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.typing{
+    font-size:20px;
+    margin-top:10px;
+    color:#bfbfbf;
+}
+
+/* ================= BUTTON ================= */
+
+.btn{
+    margin-top:25px;
+    padding:12px 30px;
+    border:none;
+    border-radius:30px;
+    color:#fff;
+    background:linear-gradient(90deg,#2b2b2b,#4a4a4a);
+    cursor:pointer;
+    transition:0.4s;
+}
+
+.btn:hover{
+    box-shadow:0 0 20px rgba(255,255,255,0.2);
+    transform:translateY(-5px);
+}
+
+/* ================= CARDS ================= */
+
+.cards{
+    display:flex;
+    flex-wrap:wrap;
+    gap:25px;
+    margin-top:30px;
+}
+
+.card{
+    flex:1;
+    min-width:250px;
+    padding:25px;
+    border-radius:15px;
+    background:rgba(255,255,255,0.03);
+    backdrop-filter:blur(10px);
+    transition:0.4s;
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    border:1px solid rgba(255,255,255,0.2);
+    box-shadow:0 0 25px rgba(255,255,255,0.1);
+}
+
+/* ================= FADE ANIMATION ================= */
+
+.hidden{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all 0.8s ease;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    text-align:center;
+    padding:20px;
+    color:#9e9e9e;
+    border-top:1px solid rgba(255,255,255,0.05);
+}

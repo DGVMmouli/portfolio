@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+// Typing Effect
+const text = "I build modern web experiences.";
+let index = 0;
+function type(){
+    if(index < text.length){
+        document.querySelector(".typing").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(type, 50);
+    }
+}
+type();
+
+// Scroll Reveal
+const sections = document.querySelectorAll(".section");
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+},{threshold:0.2});
+
+sections.forEach(section=>{
+    section.classList.add("hidden");
+    observer.observe(section);
+});
+</script>
+
+
+    <header>
+    <div class="logo"></div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#blog">Blog</a>
+        <a href="#projects">Projects</a>
+        <a href="#highlights">Highlights</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+<script>
+function goBlog(){
+    window.location.href = "blog.html";
+}
+
+function goProjects(){
+    window.location.href = "projects.html";
+}
+</script>
+<script>
+function goToProjects() {
+    document.getElementById("projects").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+</script>
+<body>
+
+    <section id="home" class="section home">
+    <h1>Hii,welcome to Mouli's profile!!!</h1>
+    <div class="typing"></div>
+    <button class="btn" onclick="goToProjects()">View Projects</button>
+</section>
+
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>
+            I am a Diploma Engineer in Computer Science passionate about
+            web development, programming, and building digital experiences.
+            I enjoy creating clean, minimal, and efficient solutions.
+        </p>
+    </section>
+
+    <section id="blog" class="section alt">
+    <h2>Blog</h2>
+    <div class="cards">
+
+        <div class="card" onclick="goBlog()" style="cursor:pointer;">
+            <h3>My Coding Journey</h3>
+            <p>How I started in computer science and grew as a developer.</p>
+        </div>
+
+        <div class="card" onclick="goBlog()" style="cursor:pointer;">
+            <h3>Web Development Basics</h3>
+            <p>Understanding HTML, CSS, and JavaScript fundamentals.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="cards">
+
+        <div class="card" onclick="goProjects()" style="cursor:pointer;">
+            <h3>CODE_X</h3>
+            <p>The real time code editor</p>
+        </div>
+
+        <div class="card" onclick="goProjects()" style="cursor:pointer;">
+            <h3>Student Management System</h3>
+            <p>Console-based project using C++ / Java.</p>
+        </div>
+
+    </div>
+</section>
+
+    <section id="highlights" class="section alt">
+        <h2>Highlights</h2>
+        <ul>
+            <li>🎓 Diploma in Computer Science</li>
+            <li>💻 Skilled in HTML, CSS, python</li>
+            <li>🚀 Passionate about app developing</li>
+        </ul>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <p>Email: dmouli803@gmail.com</p>
+        <p>Mobile: +91 93847 03267</p>
+<p>Instagram: https://www.instagram.com/dmouli_/</p>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Mouli. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
